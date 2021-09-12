@@ -1,0 +1,19 @@
+body{
+    background: silver;
+
+}
+aside{
+    float: left;
+    background: slategray;
+    padding: 2.5%;
+    width: 15%;
+    height: 100vmax;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 120%;
+    margin-right: 2.5%;
+
+}
+a {
+    text-decoration: none;
+   }

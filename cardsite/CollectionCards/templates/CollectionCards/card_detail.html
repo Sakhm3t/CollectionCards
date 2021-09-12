@@ -1,0 +1,35 @@
+{% extends 'CollectionCards/base.html' %}
+
+{% block title %}Card Detail{% endblock %}
+
+ {% block content2 %}
+     <h3>Детальная информация о карте</h3>
+     <table border="1">
+         <tr><td>Номер карты:</td><td>{{ card.card_number }}</td></tr>
+         <tr><td>Серия карты:</td><td>{{ card.card_series }}</td></tr>
+         <tr><td>Дата выпуска:</td><td>{{ card.date_of_issue }}</td>
+         <tr><td>Дата окончания:</td><td>{{ card.expiration_date }}</td>
+         <tr><td>Сумма на карте:</td><td>{{ card.sum_money }}</td>
+         <tr><td>Статус карты:</td><td>{{ card.card_status }}</td>
+         <tr><td>Дата последнего использования:</td><td>{{ card.date_of_use }}</td></tr>
+     </table>
+     <table border="1">
+         <h3>Операции по карте</h3>
+         <tr>
+             <td> Дата покупки </td>
+             <td> Цена </td>
+         </tr>
+         {% for a in purr %}
+            <tr>
+                <td>{{ a.purchase_date}}</td>
+                <td>{{ a.price }}</td>
+            </tr>
+         {% endfor %}
+     </table>
+ {% endblock %}  <br>
+
+{% block content3 %}
+    <br>
+    <li><a href="{% url 'CollectionCards:card_edit' card.pk %}">Edit status card</a></li>
+    <li><a href="{% url 'CollectionCards:Delete_card' card.pk %}">Delete card</a></li>
+{% endblock %}

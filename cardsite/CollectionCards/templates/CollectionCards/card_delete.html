@@ -1,0 +1,14 @@
+{% extends 'CollectionCards/card_detail.html' %}
+
+{% block title %}Delete card{% endblock %}
+
+{% block content3 %}
+
+<h4>Delete Card</h4>
+    <p>Card with number  "{{object.card_number}}"  was deleted.</p>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Ok" />
+    </form>
+
+{% endblock %}

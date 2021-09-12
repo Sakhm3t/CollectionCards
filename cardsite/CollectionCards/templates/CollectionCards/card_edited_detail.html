@@ -1,0 +1,19 @@
+{% extends 'CollectionCards/card_detail.html' %}
+
+{% block content2 %}
+     <h3>Detail information about card</h3>
+     <table border="1">
+         <tr><td>Номер карты:</td><td>{{ card.card_number }}</td></tr>
+         <tr><td>Серия карты:</td><td>{{ card.card_series }}</td></tr>
+         <tr><td>Дата выпуска:</td><td>{{ card.date_of_issue }}</td>
+         <tr><td>Дата окончания:</td><td>{{ card.expiration_date }}</td>
+         <tr><td>Сумма на карте:</td><td>{{ card.sum_money }}</td>
+         <tr><td>Статус карты:</td><td>{{ card.card_status }}</td>
+         <tr><td>Дата последнего использования:</td><td>{{ card.date_of_use }}</td></tr>
+     </table>
+ {% endblock %}  <br>
+
+ {% block content3 %}
+     <h5>Статус карты обновлен!</h5>
+
+ {% endblock %}

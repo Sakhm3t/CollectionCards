@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}Main page{% endblock %}</title>
+    <link rel=stylesheet href={% static "CollectionCards/css/app.css" %}>
+</head>
+<body>
+    <aside>
+        <div id="content1">
+            {% block content1 %}
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="/">Technical task</a></li>
+                    <li><a href="{% url 'CollectionCards:generate' %}">Generate</a></li>
+                    <li><a href="{% url 'CollectionCards:full_list' %}">Full List Cards</a></li>
+                    <li><a href="{% url 'CollectionCards:list_for_search' %}">Search</a></li>
+                </ul>
+
+            {% endblock %}
+        </div>
+    </aside>
+    <main>
+        <div id="content2">
+            {% block content2 %}
+                <h4>Technical task</h4>
+                Необходимо создать веб-приложение для управления базой данных бонусных карт.
+                <p>Список полей:</p>
+                <ul>
+                    <li>серия карты,</li>
+                    <li>номер карты,</li>
+                    <li>дата выпуска карты,</li>
+                    <li>дата окончания активности карты,</li>
+                    <li>дата использования,</li>
+                    <li>сумма,</li>
+                    <li>статус карты (не активирована/активирована/просрочена).</li>
+                </ul>
+                <p>Функционал приложения:</p>
+                <ul>
+                    <li>список карт с полями: серия, номер, дата выпуска, дата окончания активности, статус</li>
+                    <li>поиск по этим же полям</li>
+                    <li>просмотр профиля карты с историей покупок по ней</li>
+                    <li>активация/деактивация карты</li>
+                    <li>удаление карты</li>
+                    <li>реализовать генератор карт, с указанием серии и количества генерируемых карт,
+                        а также "срок окончания активности" со значениями "1 год", "6 месяцев" "1 месяц".
+                        После истечения срока активности карты, у карты проставляется статус "просрочена".
+                    </li>
+                </ul>
+                <i>Примечание: </i>поля с датами должны содержать также и время.
+            {% endblock %}
+            <div id="content3">
+        {% block content3 %}{% endblock %}
+            </div>
+        </div>
+    </main>
+</body>
+</html>

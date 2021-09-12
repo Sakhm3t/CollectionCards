@@ -1,0 +1,17 @@
+{% extends 'CollectionCards/card_detail.html' %}
+
+
+{% block content3 %}
+
+<h4>Edit Card</h4>
+
+<form action="{{ card.get_absolute_url }}" method="post">
+    <p><b>Choose card status</b></p>
+    {% csrf_token %}
+   <input type="radio" name="card_status" value="active">Active<Br>
+   <input type="radio" name="card_status" value="inactive" checked="checked">Inactive<Br>
+    <p><input type="submit" value="Save"></p>
+</form>
+
+
+{% endblock %}

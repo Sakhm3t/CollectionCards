@@ -1,0 +1,36 @@
+{% extends 'CollectionCards/base.html' %}
+{% block title %}Search{% endblock %}
+
+{% block content2 %}
+<h4>Введите исходные данные для поиска</h4>
+<form method="post" action="/result/">
+    {% csrf_token %}
+    <table>
+    <tr><td><label>Номер карты: </label></td><td><input type="text" name="card_number" ></td></tr>
+    <tr><td><label for="card_series">Серия карты:</label></td>
+        <td><select name="card_series">
+        <option value="">- Empty -</option>
+        <option value="db">Debit</option>
+        <option value="lo">Loyalty</option>
+        <option value="cr">Credit</option>
+            </select></td></tr>
+    <tr><td><label>Дата выпуска: </label></td><td><input type="text" name="date_of_issue" placeholder="ex. 2020-09"></td></tr>
+    <tr><td><label>Дата истечения: </label></td><td><input type="text" name="expiration_date" placeholder="ex. 2020-09"></td></tr>
+    <tr><td><label>Дата последнего использования: </label></td><td><input type="text" name="date_of_use" placeholder="ex. 2020-09"></td></tr>
+    <tr><td><label for="card_status">Статус карты:</label></td>
+        <td><select name="card_status">
+        <option value="">- Empty -</option>
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+        <option value="expired">Expired</option>
+            </select></td></tr>
+    <tr><td><label>Сумма на карте: </label></td><td><input type="number" step="0.01" min="0" name="sum_money" placeholder="12,10"></td></tr>
+    </table><br>
+
+    <p>
+        <button>Search</button>
+        <button type="reset">Reset</button>
+    </p>
+</form>
+
+{% endblock %}
