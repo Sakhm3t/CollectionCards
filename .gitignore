@@ -29,7 +29,6 @@ _ReSharper*/
 .vs/
 #Nuget packages folder
 packages/
-.idea/
 *.sqlite3
 __pycache__/
 migrations/
