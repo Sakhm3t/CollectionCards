@@ -17,3 +17,8 @@ aside{
 a {
     text-decoration: none;
    }
+nav.pag{
+    font-family: Arial, sans-serif;
+    font-size: 200%;
+    color: #ffffff;
+    }

@@ -1,5 +1,6 @@
 from datetime import datetime
 
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render, redirect
 
 # Create your views here.
@@ -42,7 +43,8 @@ def card_creation(request):
 
 class CardListView(generic.ListView):
     model = BonusCard
-    queryset = BonusCard.objects.all()
+    queryset = BonusCard.objects.all().order_by('card_number')
+    paginate_by = 20
     template_name = 'CollectionCards/card_list.html'
 
 
@@ -90,26 +92,39 @@ def searching(request):
 
 
 def search_result(request):
-    filter_kv = dict()
-    filter_kv['card_number'] = request.POST['card_number']
-    filter_kv['card_series'] = request.POST['card_series']
-    filter_kv['card_status'] = request.POST['card_status']
-    filter_kv['sum_money'] = request.POST['sum_money']
+    if request.method == "POST":
+        filter_kv = dict()
+        filter_kv['card_number'] = request.POST['card_number']
+        filter_kv['card_series'] = request.POST['card_series']
+        filter_kv['card_status'] = request.POST['card_status']
+        filter_kv['sum_money'] = request.POST['sum_money']
 
-    filter_kv = {key: filter_kv[key] for key in filter_kv if filter_kv[key] != ''}
+        filter_kv = {key: filter_kv[key] for key in filter_kv if filter_kv[key] != ''}
 
-    fields = ['date_of_issue', 'expiration_date', 'date_of_use']
+        fields = ('date_of_issue', 'expiration_date', 'date_of_use')
 
-    for field in fields:
-        post_value = request.POST[field]
-        if post_value != '':
-            try:
-                parsed_date = datetime.strptime(post_value, '%Y-%m')
-                filter_kv[field + '__year'] = parsed_date.date().year
-                filter_kv[field + '__month'] = parsed_date.date().month
-            except:
-                pass
+        for field in fields:
+            post_value = request.POST[field]
+            if post_value != '':
+                try:
+                    parsed_date = datetime.strptime(post_value, '%Y-%m')
+                    filter_kv[field + '__year'] = parsed_date.date().year
+                    filter_kv[field + '__month'] = parsed_date.date().month
+                except:
+                    pass
+        request.session['filter_kv'] = filter_kv
+    else:
+        filter_kv = request.session['filter_kv']
 
-    card_list = BonusCard.objects.filter(**filter_kv)
+    card_list = BonusCard.objects.filter(**filter_kv).order_by('card_number')
+    page_number = request.GET.get('page')
+    paginator = Paginator(card_list, 20)
+    try:
+        page_obj = paginator.page(page_number)
+    except PageNotAnInteger:
+        page_obj = paginator.page(1)
+    except EmptyPage:
+        page_obj = paginator.page(paginator.num_pages)
 
-    return render(request, 'CollectionCards/card_list.html', {'object_list': card_list})
+    return render(request, 'CollectionCards/card_list.html',
+                  {'object_list': page_obj, 'page_obj': page_obj, 'paginator': paginator})

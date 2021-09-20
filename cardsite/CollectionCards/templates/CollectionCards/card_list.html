@@ -3,28 +3,45 @@
 {% block content2 %}
     <h5> Список карт </h5>
     <table border="1">
-    <tr>
-        <td> Номер карты </td>
-        <td> Серия карты </td>
-        <td> Дата выпуска </td>
-        <td> Дата истечения </td>
-        <td> Статус карты </td>
-        <td> Дата использования </td>
-        <td> Сумма </td>
-    </tr>
-    {% for card in object_list %}
         <tr>
-        <td align="center"> <a href="{{ card.get_absolute_url }}" title="Смотреть информацию о карте" > {{ card.card_number }} </a> </td>
-        <td align="center"> {{ card.card_series }}</td>
-        <td> {{ card.date_of_issue }}</td>
-        <td> {{ card.expiration_date }}</td>
-        <td align="center"> {{ card.card_status }}</td>
-        <td> {{ card.date_of_use }}</td>
-        <td> {{ card.sum_money }}</td>
+            <td> Номер карты</td>
+            <td> Серия карты</td>
+            <td> Дата выпуска</td>
+            <td> Дата истечения</td>
+            <td> Статус карты</td>
+            <td> Дата использования</td>
+            <td> Сумма</td>
         </tr>
-    {% endfor %}
+        {% for card in object_list %}
+            <tr>
+                <td align="center"><a href="{{ card.get_absolute_url }}"
+                                      title="Смотреть информацию о карте"> {{ card.card_number }} </a></td>
+                <td align="center"> {{ card.card_series }}</td>
+                <td> {{ card.date_of_issue }}</td>
+                <td> {{ card.expiration_date }}</td>
+                <td align="center"> {{ card.card_status }}</td>
+                <td> {{ card.date_of_use }}</td>
+                <td> {{ card.sum_money }}</td>
+            </tr>
+        {% endfor %}
     </table>
-
+    <br>
+    {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}">&lt; previous</a>
+    {% endif %}
+    <nav>
+        {% for page in paginator.page_range %}
+            {% if page_obj.number == page %}
+                <b>{{ page }}</b>
+            {% elif page_obj.number|add:-2 <= page and page <= page_obj.number|add:2 %}
+                <a href="?page={{ page }}">{{ page }}</a>
+            {% endif %}
+        {% endfor %}
+    </nav>
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}"> next &gt;</a>
+    {% endif %}
 {% endblock %}  <br>
 {% block content %}{% endblock %}
+
 
