@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'CollectionCards.apps.CollectioncardsConfig'
+    'CollectionCards.apps.CollectioncardsConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

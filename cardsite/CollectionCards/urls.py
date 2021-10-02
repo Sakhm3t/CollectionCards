@@ -12,5 +12,7 @@ urlpatterns = [
     path('detail_card/<int:pk>/delete_card/', CardDeleteView.as_view(), name='Delete_card'),
     path('process/', card_creation),
     path('searching/', searching, name='list_for_search'),
-    path('result/', search_result, name='search_result')
+    path('result/', search_result, name='search_result'),
+    path('actualize/', actualize_db, name='actualize'),
+    path('api/', expired_card_api_view)
 ]

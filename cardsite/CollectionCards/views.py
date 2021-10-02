@@ -1,15 +1,18 @@
-from datetime import datetime
-
+from datetime import timedelta
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.db.models import Q
 from django.shortcuts import render, redirect
 
 # Create your views here.
 from django.urls import reverse_lazy
 from django.views import generic
 from django.views.generic import UpdateView, DeleteView
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
 from .forms import *
 from .models import *
+from .serializers import BonusCardSerializer
 
 
 def task(request):
@@ -59,7 +62,6 @@ class CardDetailView(generic.DetailView):
         if 'card_status' in request.POST:
             a.card_status = request.POST['card_status']
             a.save()
-
         return redirect(request.path)
 
     def get_context_data(self, **kwargs):
@@ -128,3 +130,26 @@ def search_result(request):
 
     return render(request, 'CollectionCards/card_list.html',
                   {'object_list': page_obj, 'page_obj': page_obj, 'paginator': paginator})
+
+
+# def actualize_db(request):
+#     count = BonusCard.objects.filter(~Q(card_status="expired")).filter(expiration_date__lte=datetime.now()).update(
+#         card_status="expired")
+#     template_vars = {'number_of_cards': count}
+#     return render(request, 'CollectionCards/actualise_db.html', template_vars)
+
+def actualize_db(request):
+    count = BonusCard.actualize_database()
+    template_vars = {'number_of_cards': count}
+    return render(request, 'CollectionCards/actualise_db.html', template_vars)
+
+
+@api_view(['GET', 'PATCH'])
+def expired_card_api_view(request):
+    if request.method == 'GET':
+        cards = BonusCard.objects.filter(~Q(card_status="active"))
+        serializer = BonusCardSerializer(cards, many=True)
+        return Response({"message": "Got some data!", "data": serializer.data})
+    if request.method == 'PATCH':
+        return Response({"message2": "Got some ANOTHER data!", "data": request.data})
+    return Response({"message": "Hello, world!"})
