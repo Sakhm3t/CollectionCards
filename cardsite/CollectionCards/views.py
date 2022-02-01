@@ -16,15 +16,18 @@ from .serializers import BonusCardSerializer
 
 
 def task(request):
+    """Method shows initial task"""
     return render(request, 'CollectionCards/base.html')
 
 
 def generation(request):
+    """Method generates form for new card generation"""
     form = GenerationForm()
     return render(request, 'CollectionCards/GenerateForm.html', {'form': form})
 
 
 def card_creation(request):
+    """Method gets parameters of new cards and save new cards to database"""
     number_of_cards = request.POST['number_of_cards']
     series_of_cards = request.POST['series_of_cards']
     validity = request.POST['validity']
@@ -45,6 +48,7 @@ def card_creation(request):
 
 
 class CardListView(generic.ListView):
+    """Class shows card list"""
     model = BonusCard
     queryset = BonusCard.objects.all().order_by('card_number')
     paginate_by = 20
@@ -52,6 +56,7 @@ class CardListView(generic.ListView):
 
 
 class CardDetailView(generic.DetailView):
+    """Class shows details of one card"""
     model = BonusCard
     pk_url_kwarg = 'pk'
     template_name = 'CollectionCards/card_detail.html'
@@ -65,9 +70,7 @@ class CardDetailView(generic.DetailView):
         return redirect(request.path)
 
     def get_context_data(self, **kwargs):
-        """
-        This has been overridden to add `PurchaseHistory` to the template context
-        """
+        """ Method has been overridden to add `PurchaseHistory` to the template context """
         context = super().get_context_data(**kwargs)
         ph = PurchaseHistory.objects.filter(bonus_card__card_number=self.kwargs['pk'])
         context['purr'] = ph
@@ -75,6 +78,7 @@ class CardDetailView(generic.DetailView):
 
 
 class CardUpdateView(UpdateView):
+    """Update one card details"""
     model = BonusCard
     template_name = 'CollectionCards/card_edit.html'
     pk_url_kwarg = 'pk'
@@ -83,17 +87,21 @@ class CardUpdateView(UpdateView):
 
 
 class CardDeleteView(DeleteView):
+    """Delete one card"""
     model = BonusCard
     template_name = 'CollectionCards/card_delete.html'
     success_url = reverse_lazy('CollectionCards:full_list')
 
 
 def searching(request):
+    """Method shows form for card searching"""
     form = SearchingForm()
     return render(request, 'CollectionCards/card_searching.html', {'form': form})
 
 
 def search_result(request):
+    """Method shows searching results"""
+    # Getting searching parameters from the user
     if request.method == "POST":
         filter_kv = dict()
         filter_kv['card_number'] = request.POST['card_number']
@@ -117,7 +125,7 @@ def search_result(request):
         request.session['filter_kv'] = filter_kv
     else:
         filter_kv = request.session['filter_kv']
-
+    # Pagination
     card_list = BonusCard.objects.filter(**filter_kv).order_by('card_number')
     page_number = request.GET.get('page')
     paginator = Paginator(card_list, 20)
@@ -132,13 +140,8 @@ def search_result(request):
                   {'object_list': page_obj, 'page_obj': page_obj, 'paginator': paginator})
 
 
-# def actualize_db(request):
-#     count = BonusCard.objects.filter(~Q(card_status="expired")).filter(expiration_date__lte=datetime.now()).update(
-#         card_status="expired")
-#     template_vars = {'number_of_cards': count}
-#     return render(request, 'CollectionCards/actualise_db.html', template_vars)
-
 def actualize_db(request):
+    """Database update (expired cards)"""
     count = BonusCard.actualize_database()
     template_vars = {'number_of_cards': count}
     return render(request, 'CollectionCards/actualise_db.html', template_vars)
@@ -146,6 +149,7 @@ def actualize_db(request):
 
 @api_view(['GET', 'PATCH'])
 def expired_card_api_view(request):
+    """Experimental method for using rest api """
     if request.method == 'GET':
         cards = BonusCard.objects.filter(~Q(card_status="active"))
         serializer = BonusCardSerializer(cards, many=True)

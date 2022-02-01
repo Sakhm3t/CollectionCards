@@ -7,6 +7,7 @@ from django.urls import reverse
 
 
 class BonusCard(models.Model):
+    """Class describes card details (database table)"""
     debit = 'db'
     loyalty = 'lo'
     credit = 'cr'
@@ -37,6 +38,7 @@ class BonusCard(models.Model):
 
 
 class PurchaseHistory(models.Model):
+    """Class describes card purchase history"""
     bonus_card = models.ForeignKey('BonusCard', on_delete=models.CASCADE)
     purchase_date = models.DateTimeField(auto_now_add=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
