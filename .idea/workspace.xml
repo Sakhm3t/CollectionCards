@@ -1,30 +1,180 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="25345c44-b185-4eaa-99ba-33233cc98e76" name="Changes" comment="" />
+    <list default="true" id="5f509815-d004-4bb6-9188-5611f53887cb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CollectionCards/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CollectionCards/tests/test_views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CollectionCards/tests/tests_models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CollectionCards/tests/tests_urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/cardsite.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cardsite.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/CollectionCards/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/CollectionCards/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/CollectionCards/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/CollectionCards/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/CollectionCards/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/CollectionCards/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/CollectionCards/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/CollectionCards/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/CollectionCards/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/CollectionCards/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/CollectionCards/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/CollectionCards/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/CollectionCards/static/CollectionCards/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/CollectionCards/static/CollectionCards/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/CollectionCards/templates/CollectionCards/GenerateForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/CollectionCards/templates/CollectionCards/GenerateForm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/CollectionCards/templates/CollectionCards/actualise_db.html" beforeDir="false" afterPath="$PROJECT_DIR$/CollectionCards/templates/CollectionCards/actualise_db.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/CollectionCards/templates/CollectionCards/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/CollectionCards/templates/CollectionCards/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/CollectionCards/templates/CollectionCards/card_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/CollectionCards/templates/CollectionCards/card_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/CollectionCards/templates/CollectionCards/card_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/CollectionCards/templates/CollectionCards/card_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/CollectionCards/templates/CollectionCards/card_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/CollectionCards/templates/CollectionCards/card_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/CollectionCards/templates/CollectionCards/card_edited_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/CollectionCards/templates/CollectionCards/card_edited_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/CollectionCards/templates/CollectionCards/card_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/CollectionCards/templates/CollectionCards/card_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/CollectionCards/templates/CollectionCards/card_searching.html" beforeDir="false" afterPath="$PROJECT_DIR$/CollectionCards/templates/CollectionCards/card_searching.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/CollectionCards/templates/CollectionCards/process.html" beforeDir="false" afterPath="$PROJECT_DIR$/CollectionCards/templates/CollectionCards/process.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/CollectionCards/tests/tests_forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/cardsite/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/CollectionCards/tests/tests_models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/CollectionCards/tests/tests_urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/CollectionCards/tests/tests_views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/CollectionCards/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/CollectionCards/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/CollectionCards/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/CollectionCards/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/cardsite/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/CollectionCards/tests/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/cardsite/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/cardsite/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/cardsite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/cardsite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/cardsite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cardsite/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/cardsite/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/cardsite/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cardsite/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1y5veyCBoYr5v6vBN7HQUGFkrGj" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="24afuINcaYpd2QgWLbPqhYgcs0G" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
   </component>
-  <component name="RunManager">
-    <configuration name="My" type="Python.DjangoServer" factoryName="Django server">
+  <component name="RunManager" selected="Django Server.cardsite">
+    <configuration name="Test: CollectionCards.tests.test_views.TestViews" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="cardsite" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="CollectionCards.tests.test_views.TestViews" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: CollectionCards.tests.test_views.TestViewsWithDB.test_pagination" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="cardsite" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="CollectionCards.tests.test_views.TestViewsWithDB.test_pagination" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: CollectionCards.tests.test_views.TestViewsWithDB.test_view_deletes_card" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="cardsite" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="CollectionCards.tests.test_views.TestViewsWithDB.test_view_deletes_card" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: CollectionCards.tests.test_views.TestViewsWithDB.test_view_shows_full_card_list" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="cardsite" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="CollectionCards.tests.test_views.TestViewsWithDB.test_view_shows_full_card_list" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: CollectionCards.tests.test_views.TestViews.test_view_shows_full_card_list" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="cardsite" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="CollectionCards.tests.test_views.TestViews.test_view_shows_full_card_list" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="cardsite" type="Python.DjangoServer" factoryName="Django server">
       <module name="cardsite" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -32,8 +182,8 @@
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="cardsite.settings" />
       </envs>
-      <option name="SDK_HOME" value="C:\DjangoProject\cardsite\venv\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -48,25 +198,65 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Django tests.Test: CollectionCards.tests.test_views.TestViewsWithDB.test_view_deletes_card" />
+        <item itemvalue="Django tests.Test: CollectionCards.tests.test_views.TestViewsWithDB.test_view_shows_full_card_list" />
+        <item itemvalue="Django tests.Test: CollectionCards.tests.test_views.TestViews.test_view_shows_full_card_list" />
+        <item itemvalue="Django tests.Test: CollectionCards.tests.test_views.TestViewsWithDB.test_pagination" />
+        <item itemvalue="Django tests.Test: CollectionCards.tests.test_views.TestViews" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="25345c44-b185-4eaa-99ba-33233cc98e76" name="Changes" comment="" />
-      <created>1631554402098</created>
+      <changelist id="5f509815-d004-4bb6-9188-5611f53887cb" name="Changes" comment="" />
+      <created>1643873840960</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1631554402098</updated>
-      <workItem from="1631554410108" duration="656000" />
-      <workItem from="1631555487645" duration="63000" />
-      <workItem from="1631555604567" duration="107000" />
-      <workItem from="1631555753270" duration="18000" />
-      <workItem from="1631555791239" duration="453000" />
-      <workItem from="1631556268473" duration="417000" />
+      <updated>1643873840960</updated>
+      <workItem from="1643873861632" duration="5666000" />
+      <workItem from="1643960236645" duration="5200000" />
+      <workItem from="1643969667228" duration="4403000" />
+      <workItem from="1644060040505" duration="5209000" />
+      <workItem from="1644226287898" duration="8888000" />
+      <workItem from="1644318414545" duration="5395000" />
+      <workItem from="1644391555362" duration="10634000" />
+      <workItem from="1644564428578" duration="10128000" />
+      <workItem from="1644774414263" duration="649000" />
+      <workItem from="1644784199880" duration="311000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/cardsite$Test__CollectionCards_tests_tests_urls_TestURLs.coverage" NAME="Test: CollectionCards.tests.tests_urls.TestURLs Coverage Results" MODIFIED="1643880597742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cardsite$Test__CollectionCards_tests_test_views_TestViewsWithDB_test_view_deletes_card.coverage" NAME="Test: CollectionCards.tests.test_views.TestViewsWithDB.test_view_deletes_card Coverage Results" MODIFIED="1644574439340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cardsite$Test__CollectionCards_tests_test_views_TestViewsWithDB_test_view_shows_full_card_list.coverage" NAME="Test: CollectionCards.tests.test_views.TestViewsWithDB.test_view_shows_full_card_list Coverage Results" MODIFIED="1644574336318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cardsite$Test__CollectionCards_tests_tests_models_TestBonusCard_test_str.coverage" NAME="Test: CollectionCards.tests.tests_models.TestBonusCard.test_str Coverage Results" MODIFIED="1643968494385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cardsite$Test__CollectionCards_tests_tests_models_TestPurchaseHistory.coverage" NAME="Test: CollectionCards.tests.tests_models.TestPurchaseHistory Coverage Results" MODIFIED="1644085303303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cardsite$Test__CollectionCards_tests_test_views_TestViews.coverage" NAME="Test: CollectionCards.tests.test_views.TestViews Coverage Results" MODIFIED="1644228291781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cardsite$Test__CollectionCards_tests_tests_models_TestBonusCard_test_actualize_database.coverage" NAME="Test: CollectionCards.tests.tests_models.TestBonusCard.test_actualize_database Coverage Results" MODIFIED="1644078178491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cardsite$Test__CollectionCards_tests_tests_models_TestBonusCard_test_str_pur.coverage" NAME="Test: CollectionCards.tests.tests_models.TestBonusCard.test_str_pur Coverage Results" MODIFIED="1644226542393" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cardsite$Test__CollectionCards_tests_test_views_TestViewsWithDB_test_pagination.coverage" NAME="Test: CollectionCards.tests.test_views.TestViewsWithDB.test_pagination Coverage Results" MODIFIED="1644239966247" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cardsite$Test__CollectionCards_tests_test_views_TestViews_test_.coverage" NAME="Test: CollectionCards.tests.test_views.TestViews.test_ Coverage Results" MODIFIED="1643976517025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cardsite$Test__CollectionCards_tests_tests_models_TestModels.coverage" NAME="Test: CollectionCards.tests.tests_models.TestModels Coverage Results" MODIFIED="1644226630144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cardsite$Test__CollectionCards_tests_tests_models_TestBonusCard.coverage" NAME="Test: CollectionCards.tests.tests_models.TestBonusCard Coverage Results" MODIFIED="1644085023819" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cardsite$Test__CollectionCards_tests_tests_models_TestBonusCard_test_get_absolute_url.coverage" NAME="Test: CollectionCards.tests.tests_models.TestBonusCard.test_get_absolute_url Coverage Results" MODIFIED="1643967790712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cardsite$Test__CollectionCards_tests_test_views_TestViews_test_view_shows_full_card_list.coverage" NAME="Test: CollectionCards.tests.test_views.TestViews.test_view_shows_full_card_list Coverage Results" MODIFIED="1644574177055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

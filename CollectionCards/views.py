@@ -1,6 +1,6 @@
 from datetime import timedelta
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from django.db.models import Q
+# from django.db.models import Q
 from django.shortcuts import render, redirect
 
 # Create your views here.
@@ -17,13 +17,16 @@ from .serializers import BonusCardSerializer
 
 def task(request):
     """Method shows initial task"""
+    if "error_message" in request.session:
+        del request.session["error_message"]
     return render(request, 'CollectionCards/base.html')
 
 
 def generation(request):
     """Method generates form for new card generation"""
     form = GenerationForm()
-    return render(request, 'CollectionCards/GenerateForm.html', {'form': form})
+    error_message = request.session["error_message"] if "error_message" in request.session else None
+    return render(request, 'CollectionCards/GenerateForm.html', {'form': form, 'error_message': error_message})
 
 
 def card_creation(request):
@@ -31,8 +34,15 @@ def card_creation(request):
     number_of_cards = request.POST['number_of_cards']
     series_of_cards = request.POST['series_of_cards']
     validity = request.POST['validity']
+    try:
+        number_of_cards = int(number_of_cards)
+        if number_of_cards < 0 or number_of_cards > 1000:
+            raise ValueError("Number is out of range")
+    except:
+        request.session["error_message"] = "Количество карт должно быть целым числом больше нуля"
+        return redirect("CollectionCards:generate")
 
-    for n in range(int(number_of_cards)):
+    for n in range(number_of_cards):
         a = BonusCard(card_series=series_of_cards,
                       date_of_issue=datetime.now(),
                       expiration_date=datetime.now() + timedelta(days=int(validity)),
@@ -92,17 +102,31 @@ class CardDeleteView(DeleteView):
     template_name = 'CollectionCards/card_delete.html'
     success_url = reverse_lazy('CollectionCards:full_list')
 
+def clear_error_mess(request):
+    if "error_mess" in request.session:
+        del request.session["error_mess"]
 
 def searching(request):
     """Method shows form for card searching"""
     form = SearchingForm()
-    return render(request, 'CollectionCards/card_searching.html', {'form': form})
-
+    error_mess = request.session["error_mess"] if "error_mess" in request.session else None
+    result = render(request, 'CollectionCards/card_searching.html', {'form': form, 'error_mess': error_mess})
+    clear_error_mess(request)
+    return result
 
 def search_result(request):
     """Method shows searching results"""
     # Getting searching parameters from the user
     if request.method == "POST":
+        if request.POST['card_number']:
+            try:
+                card_number = int(request.POST['card_number'])
+                if card_number < 0 or card_number > 1000000000000000:
+                    raise ValueError("Number is out of range")
+            except:
+                request.session["error_mess"] = "Номер карты должен быть положительным целым числом"
+                return redirect("CollectionCards:list_for_search")
+
         filter_kv = dict()
         filter_kv['card_number'] = request.POST['card_number']
         filter_kv['card_series'] = request.POST['card_series']
@@ -115,26 +139,32 @@ def search_result(request):
 
         for field in fields:
             post_value = request.POST[field]
-            if post_value != '':
+            if post_value:
                 try:
                     parsed_date = datetime.strptime(post_value, '%Y-%m')
                     filter_kv[field + '__year'] = parsed_date.date().year
                     filter_kv[field + '__month'] = parsed_date.date().month
+                    clear_error_mess(request)
                 except:
-                    pass
+                    request.session["error_mess"] = "Дата должна иметь формат: yyyy-mm"
+                    return redirect("CollectionCards:list_for_search")
         request.session['filter_kv'] = filter_kv
     else:
         filter_kv = request.session['filter_kv']
     # Pagination
-    card_list = BonusCard.objects.filter(**filter_kv).order_by('card_number')
-    page_number = request.GET.get('page')
-    paginator = Paginator(card_list, 20)
-    try:
-        page_obj = paginator.page(page_number)
-    except PageNotAnInteger:
-        page_obj = paginator.page(1)
-    except EmptyPage:
-        page_obj = paginator.page(paginator.num_pages)
+    if filter_kv:
+        card_list = BonusCard.objects.filter(**filter_kv).order_by('card_number')
+        page_number = request.GET.get('page')
+        paginator = Paginator(card_list, 20)
+        try:
+            page_obj = paginator.page(page_number)
+        except PageNotAnInteger:
+            page_obj = paginator.page(1)
+        except EmptyPage:
+            page_obj = paginator.page(paginator.num_pages)
+    else:
+        request.session["error_mess"] = "Не выбрано ни одного параметра поиска"
+        return redirect("CollectionCards:list_for_search")
 
     return render(request, 'CollectionCards/card_list.html',
                   {'object_list': page_obj, 'page_obj': page_obj, 'paginator': paginator})

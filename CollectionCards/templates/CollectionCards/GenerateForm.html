@@ -5,6 +5,9 @@
 <h4>Введите исходные данные для генерации</h4>
 <form action="/process/" method="post">
     {% csrf_token %}
+    {% if error_message %}
+        <p style="color:#ff0000">{{ error_message }}</p>
+    {% endif %}
     <table>
         <tr><td><label>Количество карт: </label></td><td><input type="text" min="1" max="1000" name="number_of_cards" ></td></tr>
         <tr><td><label for="series_of_cards">Серия карты:</label></td>

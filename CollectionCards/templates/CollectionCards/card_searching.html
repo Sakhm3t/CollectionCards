@@ -6,6 +6,9 @@
 <form method="post" action="/result/">
     {% csrf_token %}
     <table>
+    {% if error_mess %}
+        <p style="color:#ff0000">{{ error_mess }}</p>
+    {% endif %}
     <tr><td><label>Номер карты: </label></td><td><input type="text" name="card_number" ></td></tr>
     <tr><td><label for="card_series">Серия карты:</label></td>
         <td><select name="card_series">
@@ -24,7 +27,7 @@
         <option value="inactive">Inactive</option>
         <option value="expired">Expired</option>
             </select></td></tr>
-    <tr><td><label>Сумма на карте: </label></td><td><input type="number" step="0.01" min="0" name="sum_money" placeholder="12,10"></td></tr>
+    <tr><td><label>Сумма на карте: </label></td><td><input type="number" step="0.01" min="0" name="sum_money" placeholder="ex. 12,10"></td></tr>
     </table><br>
 
     <p>
